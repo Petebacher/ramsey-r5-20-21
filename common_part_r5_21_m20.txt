@@ -1,0 +1,23 @@
+# Common part M for R(5,21) >= 447: G = G384.txt, H = H42.txt
+# m = 20. One line per vertex of M, in the order of the new vertices w_0, w_1, ... of the graph.
+# Format u:y:side, u = vertex of H (0-based), y = vertex of G (0-based), side = 1 (W1) or 2 (W2).
+0:160:1
+3:86:1
+7:81:2
+11:158:1
+15:76:2
+17:208:2
+18:71:2
+19:11:2
+21:323:2
+23:300:2
+25:66:2
+28:342:1
+29:88:1
+32:280:2
+34:306:1
+35:64:1
+37:128:1
+38:362:2
+40:85:2
+41:375:1

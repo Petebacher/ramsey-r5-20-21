@@ -1,0 +1,126 @@
+== 1. checksums
+R5_20_425.txt: OK
+R5_21_446.txt: OK
+G384.txt: OK
+H24.txt: OK
+H42.txt: OK
+mckay_r45_24_line3521.g6: OK
+mckay_r55_42some_line94.g6: OK
+common_part_r5_20_m17.txt: OK
+common_part_r5_21_m20.txt: OK
+== 2. G384 from the published rule (Mathon; Xu and Radziszowski 2009)
+G384 built: 384 vertices, 24766 edges; figure-to-computed colour map (2, 0, 1)
+G384.txt is identical to the graph built from the rule
+== 3. H24, H42 from McKay's g6 lines, and both graphs from G384 + H + common part
+built R5_20_425.txt: 425 vertices = 384 + 24 + 17 (|W1| = 6, |W2| = 11)
+built R5_21_446.txt: 446 vertices = 384 + 42 + 20 (|W1| = 9, |W2| = 11)
+H24.txt is identical to the rebuilt file
+H42.txt is identical to the rebuilt file
+R5_20_425.txt is identical to the rebuilt file
+R5_21_446.txt is identical to the rebuilt file
+== 4. Theorem 3 structure and hypotheses (recovered from each finished graph)
+F: 425 vertices, 27380 edges; n(G) = 384, n(H) = 24, m = 17
+[ok] rows 0..383 are G and rows 384..407 are H
+[ok] G-H edges: a matching of size 17; each of the last 17 vertices is the twin of one matched pair
+[ok] recovered pairs equal common_part_r5_20_m17.txt
+[ok] M is an induced subgraph of both G and H (17 vertices, 68 edges)
+[ok] the w part induces exactly M[W1] u M[W2], no edge between; |W1| = 6, |W2| = 11 (from the file: 6, 11) ; M has 1 component(s)
+[ok] Theorem 3 condition: for i = 1, 2 and every v in V(M) - W_i, M[W_i u {v}] has no K4
+     info: M has 0 copies of K4, splits (W1, W2) = []; triangles inside W1, W2: 0, 17
+[ok] G has no K5 (independent sets of size 17 in G: checked by the C checkers)
+[ok] H has no K5 and no independent set of size 4 (one of size 3 exists): H is a (5,4)-graph
+[ok] arithmetic: s + t - 1 = 20; n(G) + n(H) + n(M) = 384 + 24 + 17 = 425, so R(5,20) >= 426
+HYPOTHESES OK (given that G has no independent 17-set)
+F: 446 vertices, 28244 edges; n(G) = 384, n(H) = 42, m = 20
+[ok] rows 0..383 are G and rows 384..425 are H
+[ok] G-H edges: a matching of size 20; each of the last 20 vertices is the twin of one matched pair
+[ok] recovered pairs equal common_part_r5_21_m20.txt
+[ok] M is an induced subgraph of both G and H (20 vertices, 79 edges)
+[ok] the w part induces exactly M[W1] u M[W2], no edge between; |W1| = 9, |W2| = 11 (from the file: 9, 11) ; M has 1 component(s)
+[ok] Theorem 3 condition: for i = 1, 2 and every v in V(M) - W_i, M[W_i u {v}] has no K4
+     info: M has 18 copies of K4, splits (W1, W2) = [(2, 2)]; triangles inside W1, W2: 1, 10
+[ok] G has no K5 (independent sets of size 17 in G: checked by the C checkers)
+[ok] H has no K5 and no independent set of size 5 (one of size 4 exists): H is a (5,5)-graph
+[ok] arithmetic: s + t - 1 = 21; n(G) + n(H) + n(M) = 384 + 42 + 20 = 446, so R(5,21) >= 447
+HYPOTHESES OK (given that G has no independent 17-set)
+== 5. exact checks with two checkers: H graphs (both sides) and the finished graphs (no K5)
+$ rebuilt/check_russian_doll H24.txt 5 c
+n=24 edges=154 symmetric_and_zero_diag=yes
+MODE clique: searching for a clique of size T (complement independence)
+K4 count: 0
+independence number = 4 (target 5)  nodes=260  cpu=0.0s
+independent set of size 5 exists: no
+$ rebuilt/check_russian_doll H24.txt 4 i
+n=24 edges=154 symmetric_and_zero_diag=yes
+MODE independent set of size T
+K4 count: 198
+independence number = 3 (target 4)  nodes=149  cpu=0.0s
+independent set of size 4 exists: no
+$ rebuilt/check_branch_bound H24.txt 5 4
+n=24 asym_or_diag_errors=0
+K_5 present: no  (nodes=34)
+independent 4 present: no  (nodes=36)
+PASS
+$ rebuilt/check_russian_doll H42.txt 5 c
+n=42 edges=433 symmetric_and_zero_diag=yes
+MODE clique: searching for a clique of size T (complement independence)
+K4 count: 1171
+independence number = 4 (target 5)  nodes=1450  cpu=0.0s
+independent set of size 5 exists: no
+$ rebuilt/check_russian_doll H42.txt 5 i
+n=42 edges=433 symmetric_and_zero_diag=yes
+MODE independent set of size T
+K4 count: 1127
+independence number = 4 (target 5)  nodes=1372  cpu=0.0s
+independent set of size 5 exists: no
+$ rebuilt/check_branch_bound H42.txt 5 5
+n=42 asym_or_diag_errors=0
+K_5 present: no  (nodes=184)
+independent 5 present: no  (nodes=231)
+PASS
+$ rebuilt/check_russian_doll R5_20_425.txt 5 c
+n=425 edges=27380 symmetric_and_zero_diag=yes
+MODE clique: searching for a clique of size T (complement independence)
+K4 count: skipped (n > 300)
+independence number = 4 (target 5)  nodes=1166991  cpu=0.1s
+independent set of size 5 exists: no
+$ rebuilt/check_branch_bound R5_20_425.txt 5 -1
+n=425 asym_or_diag_errors=0
+K_5 present: no  (nodes=143812)
+independence side skipped
+PASS
+$ rebuilt/check_russian_doll R5_21_446.txt 5 c
+n=446 edges=28244 symmetric_and_zero_diag=yes
+MODE clique: searching for a clique of size T (complement independence)
+K4 count: skipped (n > 300)
+independence number = 4 (target 5)  nodes=1199856  cpu=0.1s
+independent set of size 5 exists: no
+$ rebuilt/check_branch_bound R5_21_446.txt 5 -1
+n=446 asym_or_diag_errors=0
+K_5 present: no  (nodes=146798)
+independence side skipped
+PASS
+-- controls (the searches are not vacuous): K4 present in both graphs; independent sets one below the limit exist
+   (the checker's own FAIL line below is expected: each control looks for something that exists)
+$ rebuilt/check_branch_bound R5_20_425.txt 4 -1
+n=425 asym_or_diag_errors=0
+K_4 present: YES  (nodes=4)
+independence side skipped
+FAIL
+$ rebuilt/check_branch_bound R5_21_446.txt 4 -1
+n=446 asym_or_diag_errors=0
+K_4 present: YES  (nodes=4)
+independence side skipped
+FAIL
+$ rebuilt/check_branch_bound R5_20_425.txt -1 19
+n=425 asym_or_diag_errors=0
+clique side skipped
+independent 19 present: YES  (nodes=19)
+FAIL
+$ rebuilt/check_branch_bound R5_21_446.txt -1 20
+n=446 asym_or_diag_errors=0
+clique side skipped
+independent 20 present: YES  (nodes=92868)
+FAIL
+QUICK=1: skipped step 6 (G384 has no independent 17-set)
+ALL QUICK CHECKS PASSED

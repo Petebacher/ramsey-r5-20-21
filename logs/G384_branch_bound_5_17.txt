@@ -1,0 +1,8 @@
+n=384 asym_or_diag_errors=0
+K_5 present: no  (nodes=123866)
+independent 17 present: no  (nodes=51046417)
+PASS
+
+real	0m32.868s
+user	0m30.774s
+sys	0m0.032s

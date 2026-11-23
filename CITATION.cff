@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use these graphs, please cite them as below."
+title: "R(5,20) >= 426 and R(5,21) >= 447: two Ramsey graphs on 425 and 446 vertices"
+authors:
+  - family-names: Chrisbacher
+    given-names: Peter J.
+date-released: 2026-11-23
+license: CC-BY-4.0
+abstract: "A graph on 425 vertices with no K5 and no independent set of size 20, and a graph on 446 vertices with no K5 and no independent set of size 21, improving the lower bounds for the Ramsey numbers R(5,20) from 424 to 426 and R(5,21) from 445 to 447. Both are built by Theorem 3 of Xu, Shao and Radziszowski (2011) from Mathon's 384-vertex cubic-residue graph and graphs from B. D. McKay's lists, with larger common induced subgraphs (17 and 20 vertices) found by search under the full Theorem 3 condition. The clique side is checked directly by two independently written exact programs; the independent-set side follows from the theorem, whose hypotheses are machine-checked."
+keywords: [Ramsey numbers, lower bounds, graph construction]
+references:
+  - type: article
+    authors:
+      - family-names: Xu
+        given-names: Xiaodong
+      - family-names: Shao
+        given-names: Zehui
+      - family-names: Radziszowski
+        given-names: Stanislaw P.
+    title: "More constructive lower bounds on classical Ramsey numbers"
+    journal: "SIAM Journal on Discrete Mathematics"
+    volume: 25
+    year: 2011
+    start: 394
+    end: 400

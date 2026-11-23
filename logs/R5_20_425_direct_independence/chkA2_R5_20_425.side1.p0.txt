@@ -1,0 +1,2 @@
+A: n=425 edges=27380
+A[part 0/8]: independent set of size 20 exists: no (nodes 1108273087, 987.4s)
