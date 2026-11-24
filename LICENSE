@@ -16,19 +16,19 @@ WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEM
 COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
 OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-The graphs R5_20_425.txt and R5_21_446.txt, the files common_part_r5_20_m17.txt and common_part_r5_21_m20.txt,
+The graphs R5_20_426.txt, R5_20_425.txt and R5_21_446.txt, the files common_part_r5_20_m17.txt, common_part_r5_20_m18.txt and common_part_r5_21_m20.txt,
 README.md and the run outputs in logs/: Creative Commons Attribution 4.0 International (CC BY 4.0),
 https://creativecommons.org/licenses/by/4.0/ (text in LICENSES/CC-BY-4.0.txt). Please credit Peter J. Chrisbacher
 and cite this repository.
 
 Third-party material, not covered by the licences above:
-- mckay_r45_24_line3521.g6 and mckay_r55_42some_line94.g6 are single lines copied unchanged from B. D. McKay's
+- mckay_r45_24_line3521.g6, mckay_r45_24_line119677.g6 and mckay_r55_42some_line94.g6 are single lines copied unchanged from B. D. McKay's
   Ramsey graph lists (https://users.cecs.anu.edu.au/~bdm/data/ramsey.html, files r45_24.g6 and r55_42some.g6);
-  H24.txt and H42.txt are their complements, and the two graphs contain these complements as induced subgraphs.
+  H24.txt, H24_line119677.txt and H42.txt are their complements, and the three graphs contain these complements as induced subgraphs.
   We found no licence or terms of use stated on McKay's page. They are included as mathematical data, with their
   source named; please credit B. D. McKay and the authors named on his page when you use them.
 - G384.txt (built by build_g384.py from the published rule of R. Mathon, JCTB 42 (1987), in the form of X. Xu and
-  S. P. Radziszowski, EJC 16 (2009) #N1) is a mathematical construction from the literature; the two graphs contain
+  S. P. Radziszowski, EJC 16 (2009) #N1) is a mathematical construction from the literature; the three graphs contain
   it as an induced subgraph. It is identical to rows 0 to 383 of Byungkun Jang's r5-21/R5_21_444.txt
   (github.com/8rulerstar/ramsey-lower-bounds, graph files under CC BY 4.0, credit Byungkun Jang), where we first
   obtained it.

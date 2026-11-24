@@ -153,6 +153,11 @@ def main():
            for W in fileW]
     print('     info: M has %d copies of K%d, splits (W1, W2) = %s; triangles inside W1, W2: %d, %d'
           % (len(K), k - 1, spl, tri[0], tri[1]))
+    if k == 5:
+        # the same condition in its k = 5 form: every K4 of M has exactly 2 vertices in each part
+        assert all(len(set(c) & fileW[0]) == 2 and len(set(c) & fileW[1]) == 2 for c in K), \
+            'a K4 of M is not split 2 and 2'
+        print('[ok] k = 5 form: each of the %d K4 of M has exactly 2 vertices in W1 and 2 in W2' % len(K))
     # 8. clique and independence bounds
     full = lambda n: (1 << n) - 1
     assert not has_clique(bits(G), full(nG), k), 'G contains K%d' % k

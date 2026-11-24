@@ -1,0 +1,5 @@
+n=446 edges=28244 symmetric_and_zero_diag=yes
+MODE independent set of size T
+K4 count: 0
+independence number = 20 (target 21)  nodes=419893453917  cpu=10774.6s
+independent set of size 21 exists: no

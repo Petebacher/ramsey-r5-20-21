@@ -1,4 +1,5 @@
-"""Rebuild the two graphs of this release, R5_20_425.txt (R(5,20) >= 426) and R5_21_446.txt (R(5,21) >= 447).
+"""Rebuild the graphs of this release: R5_20_426.txt (R(5,20) >= 427), R5_20_425.txt (R(5,20) >= 426, kept as
+history) and R5_21_446.txt (R(5,21) >= 447).
 
 Construction: Theorem 3 of X. Xu, Z. Shao and S. P. Radziszowski, "More constructive lower bounds on classical
 Ramsey numbers", SIAM J. Discrete Math. 25 (2011) 394-400, with k = 5:
@@ -9,8 +10,8 @@ The graph F has vertices G (0..383), then H, then w_0..w_{m-1} in the order of t
   all of G; all of H; the matching y_i -- u_i; w_i joined to the G-neighbours of y_i and the H-neighbours of u_i;
   among the w's only the edges of M[W1] and of M[W2] (none between W1 and W2).
 H is decoded here from McKay's g6 line and complemented, so the H files are also checked.
-Usage: python3 build.py OUTDIR   (standard library only). Writes OUTDIR/H24.txt, OUTDIR/H42.txt,
-OUTDIR/R5_20_425.txt and OUTDIR/R5_21_446.txt; reproduce.sh compares them byte for byte with the shipped files."""
+Usage: python3 build.py OUTDIR   (standard library only). Writes OUTDIR/H24.txt, OUTDIR/H24_line119677.txt,
+OUTDIR/H42.txt, OUTDIR/R5_20_425.txt, OUTDIR/R5_20_426.txt and OUTDIR/R5_21_446.txt; reproduce.sh compares them byte for byte with the shipped files."""
 import os
 import sys
 
@@ -99,6 +100,7 @@ def main():
     G = read01(os.path.join(HERE, 'G384.txt'))
     assert len(G) == 384
     jobs = (('mckay_r45_24_line3521.g6', 'H24.txt', 'common_part_r5_20_m17.txt', 'R5_20_425.txt', 24),
+            ('mckay_r45_24_line119677.g6', 'H24_line119677.txt', 'common_part_r5_20_m18.txt', 'R5_20_426.txt', 24),
             ('mckay_r55_42some_line94.g6', 'H42.txt', 'common_part_r5_21_m20.txt', 'R5_21_446.txt', 42))
     for g6f, hname, pf, fname, nh in jobs:
         H = complement(g6_decode(open(os.path.join(HERE, g6f)).read()))

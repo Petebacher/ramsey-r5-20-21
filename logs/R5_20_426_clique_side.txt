@@ -1,0 +1,11 @@
+$ check_russian_doll R5_20_426.txt 5 c
+n=426 edges=27517 symmetric_and_zero_diag=yes
+MODE clique: searching for a clique of size T (complement independence)
+K4 count: skipped (n > 300)
+independence number = 4 (target 5)  nodes=1178992  cpu=0.1s
+independent set of size 5 exists: no
+$ check_branch_bound R5_20_426.txt 5 -1
+n=426 asym_or_diag_errors=0
+K_5 present: no  (nodes=143669)
+independence side skipped
+PASS

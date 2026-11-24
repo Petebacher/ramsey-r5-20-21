@@ -1,11 +1,22 @@
 {
   "repo": "ramsey-r5-20-21",
-  "title": "R(5,20) >= 426 and R(5,21) >= 447: two Ramsey graphs",
-  "description": "<p>A graph on 425 vertices with no K<sub>5</sub> and no independent set of size 20, and a graph on 446 vertices with no K<sub>5</sub> and no independent set of size 21. They raise the lower bounds for the Ramsey numbers R(5,20) from 424 to 426 and R(5,21) from 445 to 447.</p><p>Both are built by Theorem 3 of Xu, Shao and Radziszowski (SIAM J. Discrete Math. 25 (2011)) from Mathon's 384-vertex cubic-residue graph and complements of graphs from B. D. McKay's lists, with larger common induced subgraphs (17 and 20 vertices) found by search under the full Theorem 3 condition. The clique side is checked directly by two independently written exact programs; the independent-set side follows from the theorem, whose hypotheses are machine-checked, and for the 425-vertex graph also from one finished direct exact search.</p>",
-  "version": "1.0",
-  "creators": [{"name": "Chrisbacher, Peter J."}],
+  "title": "R(5,20) >= 427 and R(5,21) >= 447: Ramsey graphs on 426 and 446 vertices",
+  "description": "<p>A graph on 426 vertices with no K<sub>5</sub> and no independent set of size 20, and a graph on 446 vertices with no K<sub>5</sub> and no independent set of size 21. They raise the lower bounds for the Ramsey numbers R(5,20) to 427 (from 426 in version 1.0 and 424 in the survey) and R(5,21) to 447 (from 445). The release also keeps the 425-vertex graph of version 1.0 (R(5,20) at least 426) as history.</p><p>Both are built by Theorem 3 of Xu, Shao and Radziszowski (SIAM J. Discrete Math. 25 (2011)) from Mathon's 384-vertex cubic-residue graph and complements of graphs from B. D. McKay's lists, with common induced subgraphs (18 and 20 vertices) found by search under the full Theorem 3 condition: every K<sub>4</sub> of the common part has exactly two vertices in each of the two parts. The clique side is checked directly by two independently written exact programs; the independent-set side follows from the theorem, whose hypotheses are machine-checked, and has also been searched directly by finished exact programs (two different programs for the R(5,20) graphs, one for the 446-vertex graph). Best public bounds we could find as of 24 November 2026.</p>",
+  "version": "1.1",
+  "creators": [
+    {
+      "name": "Chrisbacher, Peter J."
+    }
+  ],
   "license": "cc-by-4.0",
   "upload_type": "dataset",
-  "keywords": ["Ramsey numbers", "lower bounds", "R(5,20)", "R(5,21)", "graph construction", "gluing construction"],
-  "release_notes": "R(5,20) >= 426 (425-vertex graph) and R(5,21) >= 447 (446-vertex graph), by Theorem 3 of Xu, Shao and Radziszowski (2011) with new common parts of 17 and 20 vertices.\nIncludes the inputs, a standard-library rebuild, a hypothesis verifier, exact checkers and reproduce.sh.\nThe independent-set side rests on the theorem; README.md says which direct checks finished."
+  "keywords": [
+    "Ramsey numbers",
+    "lower bounds",
+    "R(5,20)",
+    "R(5,21)",
+    "graph construction",
+    "gluing construction"
+  ],
+  "release_notes": "v1.1: R(5,20) >= 427 from a new 426-vertex graph, Theorem 3 with an 18-vertex common part (18 copies of K4, each split 2 and 2 between parts of 10 and 8 vertices). The 425-vertex graph of v1.0 stays as history. R(5,21) >= 447 is unchanged.\nNew: R5_20_426.txt, its inputs, build and verification code extended, logs of the finished direct independence searches (all three graphs).\nREADME corrected: survey item 2.3.h applies only to the 425-vertex graph; search sweep counts added.\nThe independent-set side rests on the theorem and on the finished direct searches listed in README.md."
 }
